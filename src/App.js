@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
-// @import page
-// import HomePage from "./pages/home";
+//*IMPORT PAGE
 import LoginPage from "./pages/login";
 import RegisterPage from "./pages/register";
 import VerificationPage from "./pages/verification";
@@ -16,15 +15,14 @@ import NewArticle from "./pages/new.article";
 import DetailBlog from "./pages/detail.blog";
 import Footer from "./components/footer";
 
-// import BlogsPageAfter from "./pages/blogs/index.after.login";
-// @import component
+//*IMPORT COMPONENT
 import ProtectedRoute from "./protected.routes";
 
-// @import action
+//*IMPORT ACTION
 import { keepLogin } from "./store/slices/auth/slices";
 import "./App.style.css";
 function App() {
-  // @hooks
+  //*HOOKs
   const dispatch = useDispatch();
   const { isKeepLoginLoading } = useSelector((state) => {
     return {
@@ -32,7 +30,7 @@ function App() {
     };
   });
 
-  // @side effect
+  //*SIDE EFFECT
   useEffect(() => {
     dispatch(keepLogin());
   }, []);
@@ -48,25 +46,13 @@ function App() {
     <div className="container w-full bg-white">
       <Navbar2 />
       <Routes>
-        {/* <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <BlogsPage />
-            </ProtectedRoute>
-          } */}
         <Route path="/" element={<BlogsPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/verification/:token" element={<VerificationPage />} />
-        {/* <Route path="/profile" element={<FormUploadImage />} /> */}
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/newArticle" element={<NewArticle />} />
         <Route path="/detailBlog" element={<DetailBlog />} />
-
-        {/* <Route path="/homeAfter" element={<BlogsPageAfter />} /> */}
-
-        {/* <Route path="/blogs" element={<BlogsPage />} /> */}
       </Routes>
       <Toaster />
       <Footer />

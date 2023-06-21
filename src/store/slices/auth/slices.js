@@ -17,25 +17,15 @@ export const login = createAsyncThunk("auth/login", async (payload, { rejectWith
     Toast.success("Login success.");
 
     return data?.isAccountExist;
-    // } catch (error) {
-  } catch (error) {
-    // console.error(error.response ? error.response.data : error)
-    // Toast.error("Error : something went wrong.")
-    // return rejectWithValue(error.response ? error.response.data : error);
-  }
+  } catch (error) {}
 });
 
 export const keepLogin = createAsyncThunk("auth/keepLogin", async (payload, { rejectWithValue }) => {
   try {
     // @get user data with token
     const { data } = await api.get("/auth");
-    // console.log(data.imgProfile);
     return data;
-  } catch (error) {
-    // console.error(error.response ? error.response.data : error)
-    // Toast.error("Error : something went wrong.")
-    // return rejectWithValue(error.response ? error.response.data : error);
-  }
+  } catch (error) {}
 });
 
 export const register = createAsyncThunk("auth/register", async (payload, { rejectWithValue }) => {

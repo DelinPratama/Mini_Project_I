@@ -48,7 +48,7 @@ function RegisterPage() {
             <form onSubmit={handleSubmit} className="w-full flex flex-col items-center">
               <input type="text" name="username" placeholder="Username" className="input input-bordered w-full mb-10" value={values.username} onChange={handleChange} onBlur={handleBlur} />
               <input type="email" name="email" placeholder="ex. email@gmail.com" className="input input-bordered w-full mb-10" value={values.email} onChange={handleChange} onBlur={handleBlur} />
-              <input type="text" name="phone" placeholder="+628xxx - xxx - xxxx" className="input input-bordered w-full mb-10" value={values.phone} onChange={handleChange} onBlur={handleBlur} />
+              <input type="text" name="phone" placeholder="08xxx - xxx - xxxx" className="input input-bordered w-full mb-10" value={values.phone} onChange={handleChange} onBlur={handleBlur} />
               <input type="password" name="password" placeholder="Password" className="input input-bordered w-full mb-10" value={values.password} onChange={handleChange} onBlur={handleBlur} />
               <input type="password" name="confirmPassword" placeholder="Confirm password" className="input input-bordered w-full mb-10" value={values.confirmPassword} onChange={handleChange} onBlur={handleBlur} />
               {/* {errors.message && (
